@@ -1,0 +1,79 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  button {
+    @apply border py-2 px-3 rounded-md;
+  }
+  h2, h3, p {
+    color: #052538 ;
+  }
+ 
+}
+.slick-slide > div {
+  margin: 0 14px;
+}
+
+@layer utilities {
+  
+  .bg-custom-blue {
+    background-color: #E7F2F8;
+  }
+  .bg-new-blue {
+    background-color: #127ABB;
+  }
+  .bg-footer-blue {
+    background-color: #052538;
+  }
+  .text-f-blue {
+    background-color: #052538;
+  }
+  .text-new-blue {
+    color: #127ABB;
+  }
+  .text-tiny {
+    font-size: 10px;
+  }
+  .col-custom-blue {
+    color: #E7F2F8;
+  }
+  /* FAQ.css */
+.faq-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.question {
+  user-select: none;
+}
+
+.toggle-btn {
+  transition: transform 0.3s ease-in-out;
+}
+
+.answer {
+  display: none;
+}
+
+.answer.block {
+  display: block;
+}
+
+  
+
+  
+
+}
+
+@import url('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
+
+
+
