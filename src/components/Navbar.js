@@ -136,57 +136,47 @@ const Navbar = () => {
             : 'absolute top-0 h-screen left-[-100%] ease-in duration-500 z-10'
         }
       >
-        <div className='relative top-8 left-0 mt-6 px-2 flex justify-between items-center w-full'>
-          <input
-            type='text'
-            placeholder='What do you want to learn?'
-            className='p-2 bg-gray-900 border-gray-700 rounded relative bottom-0 md:text-sm w-full'
-          />
-          <IoIosSearch
-            className='ion-ios-search text-xl cursor-pointer absolute top-2 right-6 text-gray-400'
-            onClick={''}
-          />
-        </div>
+       
         <ul className='flex flex-col fixed w-full h-full space-y-4 items-center justify-start mt-12'>
           <li
-            className='text-2xl p-8 mr-10 hover:text-blue-500 hover:cursor-pointer'
+            className='text-2xl p-8 mr-10  hover:cursor-pointer hover:text-[#FFA62B]'
             onClick={() => navigateToPage('/')}
           >
             Home
           </li>
           <li
-            className={`text-2xl p-8 mr-10 hover:text-blue-500 hover:cursor-pointer flex justify-between`}
-            onClick={() => toggleAnswer(0)}
+            className={`text-2xl p-8 mr-10  hover:cursor-pointer hover:text-[#FFA62B] flex justify-between`}
+            // onClick={() => toggleAnswer(0)}
           >
-            Courses
+            About
 
           </li>
 
           <li
-            className='text-2xl p-8 mr-10 hover:text-blue-500 hover:cursor-pointer'
-            onClick={() => navigateToPage('/about-us')}
+            className='text-2xl p-8 mr-10  hover:cursor-pointer hover:text-[#FFA62B]'
+            // onClick={() => navigateToPage('/about-us')}
           >
-            About Us
+            Services
           </li>
           <li
-            className='text-2xl p-8 mr-10 hover:text-blue-500 hover:cursor-pointer'
-            onClick={() => navigateToPage('/contact')}
+            className='text-2xl p-8 mr-10  hover:cursor-pointer hover:text-[#FFA62B]'
+            // onClick={() => navigateToPage('/contact')}
           >
             Contact
           </li>
 
           <div className='mt-8'>
             <button
-              className='bg-transparent  text-[#00401A] hover:bg-blue-500 hover:text-white text-xl p-4 mx-2'
+              className='bg-transparent  text-[#00401A] transform transition-transform hover:scale-110  text-xl p-4 mx-2'
               onClick={() => navigateToPage('/login')}
             >
-              Log in
+              Login
             </button>
             <button
-              className='bg-[#00401A] m-4 border-blue-500 text-white text-xl p-4 mx-2'
+              className='bg-[#00401A] m-4 border-none transform transition-transform hover:scale-110 text-white text-xl p-4 mx-2'
               onClick={() => navigateToPage('/register')}
             >
-              Register
+              Sign Up
             </button>
           </div>
         </ul>

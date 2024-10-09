@@ -3,8 +3,8 @@ import { RxDotFilled } from 'react-icons/rx';
 import { useMediaQuery } from 'react-responsive';
 import ha from '../images/hero1.png'
 import hb from '../images/hero1.png'
-import hc from '../images/herop.png'
-import hd from '../images/hero2pr.png'
+import hc from '../images/hero2.png'
+import hd from '../images/hero2.png'
 import Offers from './Offers';
 
 
@@ -82,7 +82,7 @@ const Hero = () => {
             {/* <div className='bg-black/30 absolute top-12 left-0 w-full h-[70vh]' /> */}
             <div className='absolute top-40 w-full h-[70vh] flex flex-col justify-center text-white'>
                 <div className='justify-center md:left-[10%] max-w-[1100px] m-auto absolute p-4'>
-                    <h1 className='font-bold mb-4 text-3xl md:text-6xl drop-shadow-2xl w-[55%]'>
+                    <h1 className='font-bold mb-4 text-3xl md:text-6xl drop-shadow-2xl w-[65%]'>
                         Your Delivery Partner for <span className='text-[#FFA62B]'>Fast and Reliable</span> Service
                     </h1>
                     {/* <h1 className='font-bold mb-4 text-3xl md:text-6xl drop-shadow-2xl'>
@@ -91,7 +91,7 @@ const Hero = () => {
                     <h1 className='font-bold mb-4 text-3xl md:text-6xl drop-shadow-2xl'>
                     Reliable Service
                     </h1> */}
-                    <p className='text-xl mb-4 text-white w-[50%]'>From small packages to bulk deliveries, we handle your parcels with care and ensure they reach their destination on time.</p>
+                    <p className='text-xl mb-4 text-white w-[95%] md:w-[50%]'>From small packages to bulk deliveries, we handle your parcels with care and ensure they reach their destination on time.</p>
                     <button className='px-4 text-lg font-[500] rounded-full relative top-5 bg-[#00401A] hover:text-white border-none transform transition-transform hover:scale-110'>
                         Book a Delivery
                     </button>

@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { IoIosClock } from 'react-icons/io';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import pa from '../images/skills.png'
+import pa from '../images/pexels.png'
 import ca from '../images/course1.png'
 import cb from '../images/course2.png'
 import st from '../images/star.png'
@@ -28,11 +28,13 @@ import cv from '../images/HM_Civil_Service_logo 1.png'
 import ll from '../images/LloydsBankLogo 1.png'
 import hm from '../images/Home_Office 1.png'
 import mb from '../images/faqsmob.png'
+import ta from '../images/call.png'
 
 import Slider from 'react-slick';
 import FAQ from './Faqs';
 import Footer from './Footer';
 import { useNavigate } from 'react-router-dom';
+import Offers from './Offers';
 
 
 
@@ -42,10 +44,10 @@ const Skills = () => {
     const navigate = useNavigate();
 
     const handleData = () => {
-      navigate('data-analysis');
+        navigate('data-analysis');
     };
     const handleBusiness = () => {
-      navigate('business-analysis');
+        navigate('business-analysis');
     };
 
     const reviews = [
@@ -58,8 +60,8 @@ const Skills = () => {
 
     ];
 
-   
-  
+
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const settings = {
@@ -68,38 +70,38 @@ const Skills = () => {
         slidesToScroll: 1,
         // dots: true,
         // arrows: true,
-        autoplay: true, 
-        autoplaySpeed: 5000,   
+        autoplay: true,
+        autoplaySpeed: 5000,
         beforeChange: (current, next) => setCurrentIndex(next),
         responsive: [
-          {
-            breakpoint: 767, // for small screens
-            settings: {
-              slidesToShow: 1,
+            {
+                breakpoint: 767, // for small screens
+                settings: {
+                    slidesToShow: 1,
+                },
             },
-          },
-          {
-            breakpoint: 1023, // for medium screens
-            settings: {
-              slidesToShow: 2,
+            {
+                breakpoint: 1023, // for medium screens
+                settings: {
+                    slidesToShow: 2,
+                },
             },
-          },
-          {
-            breakpoint: 9999, // for large screens
-            settings: {
-              slidesToShow: 3,
+            {
+                breakpoint: 9999, // for large screens
+                settings: {
+                    slidesToShow: 3,
+                },
             },
-          },
         ],
-      };
-      
-  
-    const prevSlide = () => {
-      setCurrentIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
     };
-  
+
+
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
+    };
+
     const nextSlide = () => {
-      setCurrentIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
+        setCurrentIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
     };
 
     return (
@@ -107,22 +109,50 @@ const Skills = () => {
             <div className=' flex flex-col-reverse md:flex md:flex-row py-8 px-10 md:px-20 justify-between'>
                 <div className=' '>
                     <img
-                        className=' w-[100%] md:w-[80%]   object-cover sm:object-contain md:object-contain lg:object-cover '
+                        className=' w-[100%] md:w-[80%] lg:w-[100%]   object-cover sm:object-contain md:object-contain lg:object-cover '
                         src={pa}
 
                     />
-                </div>
-                <div className='w-[100%] md:w-[70%] lg:w-[50%] flex flex-col justify-center gap-3 mb-8 md:mb-0  '>
-                    <h2 className='font-semibold text-xl md:text-xl  lg:text-2xl'>Enhance Your Tech Skills</h2>
-                    <p className='  text-left font-normal pr-0 sm:pr-0 md:pr-0 lg:pr-20 text-xs sm:text-xs md:text-xs lg:text-base'>At Smart Approaches, we are committed to empowering individuals with the knowledge and skills essential for success in the ever-evolving landscapes of business and data analysis.</p>
+                 
 
-                    <button className=' text-xs sm:text-xs md:text-xs lg:text-base w-[38%] sm:w-[50%] md:w-[40%] lg:w-[31%]   items-start bg-blue-500 text-white border-blue-500 transform transition-transform hover:scale-110 mt-3'>
-                        Learn more
+                        <div
+
+                            className='text-lg w-[120%] sm:w-[120%] md:w-[100%] relative right-5 sm:right-5 md:right-0 font-bold text-gray-700 border-[1px] border-[#ACACAC] p-4 rounded shadow-md flex-row items-start justify-between gap-3 pb-6'
+                        >
+
+
+                            <div>
+                                <img className='w-full h-[40px] object-contain' src={ta} alt='' />
+                                <h4 className='font-semibold'>Fast delivery</h4>
+                            </div>
+                            <div>
+                                <img className='w-full h-[40px] object-contain' src={ta} alt='' />
+                                <h4 className='font-semibold'>Fast delivery</h4>
+                            </div>
+                            <div>
+                                <img className='w-full h-[40px] object-contain' src={ta} alt='' />
+                                <h4 className='font-semibold'>Fast delivery</h4>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    
+                </div>
+                <div className='w-[100%] md:w-[80%] lg:w-[50%] flex flex-col justify-center gap-3 mb-8 md:mb-0  '>
+                    <h2 className='font-semibold text-xl md:text-xl  lg:text-2xl'>Delivering Convenience with Every Parcel</h2>
+                    <p className='  text-left font-normal pr-0 sm:pr-0 md:pr-0 lg:pr-20 text-xs sm:text-xs md:text-xs lg:text-base'>At Multi-Bag Deliveries (MBD), we make sending and receiving packages easy and affordable across Ghana. From food to clothes, drugs to gadgets, we’ve got you covered. Simply place your order, and MBD will deliver swiftly and securely.</p>
+
+                    <button className='rounded-full px-0 lg:px-2 text-xs sm:text-xs md:text-xs lg:text-base font-[600] w-[55%] sm:w-[50%] md:w-[100%] lg:w-[35%]   items-start text-white bg-[#00401A]  border-none transform transition-transform hover:scale-110 mt-3'>
+                        Send or Receive a Package
                     </button>
+
                 </div>
 
 
             </div>
+
+            <Offers />
 
             <div className='px-10 md:px-16 py-8'>
                 <h3 className='text-2xl md:text-2xl font-semibold pb-4'>Our Courses</h3>
@@ -290,102 +320,102 @@ const Skills = () => {
                 <div className='flex flex-row justify-between px-8 md:px-12 lg:px-20    '>
                     <h3 className='text-white text-xl md:text-2xl font-semibold'>What our students have to say</h3>
                     <div className='hidden md:flex flex-row gap-3 '>
-                       
+
                     </div>
                 </div>
                 <div>
-                <Slider {...settings}  className=' w-[92%] px-8 md:px-12 lg:px-20 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16'>
-        {reviews.map((review, index) => (
-          <div key={index}>
-            <div className='flex flex-row bg-custom-blue px-8 py-4 rounded-tr-3xl '>
-              <div>
-                <img src={pr} alt='' className='rounded-full object-contain' />
-              </div>
-              <div className='ml-6 mt-3'>
-                <h3 className='font-semibold'>{review.name}</h3>
-                <p className='text-xs mt-2'>{review.role}</p>
-              </div>
-            </div>
-            <div className='rounded-bl-3xl bg-white px-10 py-6'>
-              <p className=' font-worksans text-new-blue text-3xl'>"</p>
-              <p className='text-sm'>{review.text}</p>
-              <p className=' flex justify-end mt-2 font-worksans text-new-blue text-3xl'>"</p>
-            </div>
-          </div>
-        ))}
-      </Slider>
-      
-            
+                    <Slider {...settings} className=' w-[92%] px-8 md:px-12 lg:px-20 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16'>
+                        {reviews.map((review, index) => (
+                            <div key={index}>
+                                <div className='flex flex-row bg-custom-blue px-8 py-4 rounded-tr-3xl '>
+                                    <div>
+                                        <img src={pr} alt='' className='rounded-full object-contain' />
+                                    </div>
+                                    <div className='ml-6 mt-3'>
+                                        <h3 className='font-semibold'>{review.name}</h3>
+                                        <p className='text-xs mt-2'>{review.role}</p>
+                                    </div>
+                                </div>
+                                <div className='rounded-bl-3xl bg-white px-10 py-6'>
+                                    <p className=' font-worksans text-new-blue text-3xl'>"</p>
+                                    <p className='text-sm'>{review.text}</p>
+                                    <p className=' flex justify-end mt-2 font-worksans text-new-blue text-3xl'>"</p>
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
+
+
                 </div>
 
-               </div>
+            </div>
 
-               <div className='hidden md:block bg-white '>
-               <div className="py-16 mt-6 items-center flex flex-col  " 
-         style={{
-           backgroundImage: `url(${wb})`, 
-           backgroundSize: 'contain', 
-           backgroundRepeat: 'no-repeat', 
-           backgroundPosition: 'center', 
+            <div className='hidden md:block bg-white '>
+                <div className="py-16 mt-6 items-center flex flex-col  "
+                    style={{
+                        backgroundImage: `url(${wb})`,
+                        backgroundSize: 'contain',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center',
 
-           
-         }}
-    >
-                        <h2 className=' text-lg md:text-lg lg:text-2xl  font-semibold items-center text-center'>Our Alumni have gone on to work at these organizations after training</h2>
 
-                        <div className='mt-4 w-[80%]'>
+                    }}
+                >
+                    <h2 className=' text-lg md:text-lg lg:text-2xl  font-semibold items-center text-center'>Our Alumni have gone on to work at these organizations after training</h2>
+
+                    <div className='mt-4 w-[80%]'>
                         <div className='grid grid-cols-2 md:grid-cols-4 gap-6 mt-4 mx-8  '>
-                        <div><img src={ns} alt="" className='object-contain w-[75%]  relative top-4' /></div>
+                            <div><img src={ns} alt="" className='object-contain w-[75%]  relative top-4' /></div>
                             <div><img src={pw} alt="" className='object-contain w-[60%] relative top-2' /></div>
                             <div><img src={jg} alt="" className='object-contain relative top-1 right-2 w-[70%] ' /></div>
                             <div><img src={bm} alt="" className='object-contain w-[80%] relative top-7 ' /></div>
                         </div>
                         <div className='grid grid-cols-2 md:grid-cols-3 mt-10 gap-5 mx-20 pl-5'>
-                            
+
                             <div><img src={cv} alt="" className='object-contain relative top-3 w-[50%]' /></div>
                             <div><img src={ll} alt="" className='object-contain relative top-7 w-[65%]' /></div>
                             <div><img src={hm} alt="" className='object-contain relative top-3 w-[55%]' /></div>
 
                         </div>
 
-                        </div>
                     </div>
-                     
-               </div>
-               <div className=' md:hidden bg-white '>
-               <div className="py-20 mt-6 items-center flex flex-col  " 
-         style={{
-           backgroundImage: `url(${mb})`, 
-           backgroundSize: 'contain', 
-           backgroundPosition: 'center',
-           width: '100%' 
+                </div>
 
-           
-         }}
-    >
-                        <h2 className=' text-base  font-bold items-center text-center mx-4'>Our Alumni have gone on to work at these organizations after training</h2>
+            </div>
+            <div className=' md:hidden bg-white '>
+                <div className="py-20 mt-6 items-center flex flex-col  "
+                    style={{
+                        backgroundImage: `url(${mb})`,
+                        backgroundSize: 'contain',
+                        backgroundPosition: 'center',
+                        width: '100%'
 
-                        <div className='mt-4 w-[85%]'>
+
+                    }}
+                >
+                    <h2 className=' text-base  font-bold items-center text-center mx-4'>Our Alumni have gone on to work at these organizations after training</h2>
+
+                    <div className='mt-4 w-[85%]'>
                         <div className='grid grid-cols-2 md:grid-cols-4 gap-6 mt-4 mx-8  '>
-                        <div><img src={ns} alt="" className='object-contain w-[75%]  relative top-4' /></div>
+                            <div><img src={ns} alt="" className='object-contain w-[75%]  relative top-4' /></div>
                             <div><img src={pw} alt="" className='object-contain w-[70%] relative top-2' /></div>
                             <div><img src={jg} alt="" className='object-contain relative top-1 right-2 w-[80%] ' /></div>
                             <div><img src={bm} alt="" className='object-contain w-[90%] relative top-7 ' /></div>
                         </div>
                         <div className='grid grid-cols-2 md:grid-cols-3 mt-10 gap-5 mx-10 pl-5'>
-                            
+
                             <div><img src={cv} alt="" className='object-contain relative top-3 right-6 w-[100%]' /></div>
                             <div><img src={ll} alt="" className='object-contain relative top-3 w-[100%]' /></div>
                             <div><img src={hm} alt="" className='object-contain relative top-5 left-10 w-[95%]' /></div>
 
                         </div>
 
-                        </div>
                     </div>
-                     
-               </div>
-               <FAQ />
-               
+                </div>
+
+            </div>
+            <FAQ />
+
         </div>
     );
 };
