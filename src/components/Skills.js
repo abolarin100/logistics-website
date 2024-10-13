@@ -4,8 +4,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import { IoIosClock } from 'react-icons/io';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import pa from '../images/pexels.png'
-import ca from '../images/course1.png'
-import cb from '../images/course2.png'
+import ca from '../images/delivery1.png'
+import cb from '../images/delivery2.png'
 import st from '../images/star.png'
 import bg from '../images/group.png'
 import lay from '../images/overlay.png'
@@ -17,7 +17,7 @@ import vi from '../images/visio.png'
 import sq from '../images/SQL logo 1.png'
 import bi from '../images/Power BI logo 1.png'
 import si from '../images/side.png'
-import wk from '../images/worknew.png'
+import wk from '../images/works1.png'
 import pr from '../images/profile.png'
 import wb from '../images/Webpattern.png'
 import pw from '../images/PricewaterhouseCoopers_Logo 1.png'
@@ -26,9 +26,13 @@ import jg from '../images/Jaguar logo 1.png'
 import bm from '../images/Birmingham logo 1.png'
 import cv from '../images/HM_Civil_Service_logo 1.png'
 import ll from '../images/LloydsBankLogo 1.png'
-import hm from '../images/Home_Office 1.png'
+import hm from '../images/parcel.png'
 import mb from '../images/faqsmob.png'
 import ta from '../images/call.png'
+import ra from '../images/fast.png'
+import rb from '../images/real.png'
+import rc from '../images/order.png'
+import rr from '../images/john1.png'
 
 import Slider from 'react-slick';
 import FAQ from './Faqs';
@@ -51,11 +55,11 @@ const Skills = () => {
     };
 
     const reviews = [
-        { name: 'John Doe', role: 'Student', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
-        { name: 'Jane Doe', role: 'Student', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
-        { name: 'John Mark', role: 'Student', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
-        { name: 'Mark Doe', role: 'Student', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
-        { name: 'John Jane', role: 'Student', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
+        { name: 'John Doe', role: 'Architect', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
+        { name: 'Tim Ugo', role: 'CEO, Tee Ventures', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
+        { name: 'Jane Doe', role: 'Fashion designer', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
+        { name: 'Mike Ade', role: 'Graphic designer', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
+        { name: 'John Jane', role: 'Trader', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
         ,
 
     ];
@@ -113,31 +117,69 @@ const Skills = () => {
                         src={pa}
 
                     />
-                 
-
-                        <div
-
-                            className='text-lg w-[120%] sm:w-[120%] md:w-[100%] relative right-5 sm:right-5 md:right-0 font-bold text-gray-700 border-[1px] border-[#ACACAC] p-4 rounded shadow-md flex-row items-start justify-between gap-3 pb-6'
-                        >
 
 
-                            <div>
-                                <img className='w-full h-[40px] object-contain' src={ta} alt='' />
-                                <h4 className='font-semibold'>Fast delivery</h4>
-                            </div>
-                            <div>
-                                <img className='w-full h-[40px] object-contain' src={ta} alt='' />
-                                <h4 className='font-semibold'>Fast delivery</h4>
-                            </div>
-                            <div>
-                                <img className='w-full h-[40px] object-contain' src={ta} alt='' />
-                                <h4 className='font-semibold'>Fast delivery</h4>
-                            </div>
-                            
-                            
-                            
+                    <div
+
+                        className=' z-50 bg-white bottom-11 left-24 hidden lg:flex text-lg w-[120%] sm:w-[120%] md:w-[90%] relative right-5 sm:right-5 md:right-0 font-bold text-gray-700 border-[1px] border-[#ACACAC] p-4 rounded shadow-md  justify-between  gap-3 pb-4'
+                    >
+
+
+                        <div className=''>
+                            <img className='w-full h-[25px] object-contain' src={ra} alt='' />
+                            <p className=' text-sm text-[#00401A] font-[500] pt-3'>Fast delivery</p>
                         </div>
-                    
+
+                        <div className='border-l-2 pl-5'>
+                            <img className='w-full h-[25px] object-contain' src={rb} alt='' />
+                            <p className=' text-sm text-[#00401A] font-[500] pt-3'>Real time tracking</p>
+                        </div>
+                        <div className='border-l-2 pl-5'>
+                            <img className='w-full h-[25px] object-contain' src={rc} alt='' />
+                            <p className=' text-sm text-[#00401A] font-[500] pt-3'>Convenient order</p>
+                        </div>
+
+
+
+                    </div>
+                    <div
+
+                        className='z-50 bg-white bottom-9 lg:hidden mx-3 mr-6 flex text-lg left-2 md:left-0 w-[87%] sm:w-[87%] md:w-[75%] relative  font-bold text-gray-700 border-[1px] border-[#ACACAC] p-4 rounded shadow-md  justify-between  gap-3 pb-4'
+                    >
+
+
+                        <div className=''>
+                            <img className=' h-[25px] object-contain' src={ra} alt='' />
+                            <p className=' text-sm text-[#00401A] font-[500] pt-3'>Fast delivery</p>
+                        </div>
+
+                        <div className='border-l-2 pl-5'>
+                            <img className=' h-[25px] object-contain' src={rb} alt='' />
+                            <p className=' text-sm text-[#00401A] font-[500] pt-3'>Real time tracking</p>
+                        </div>
+
+
+
+
+                    </div>
+                    <div
+
+                        className='z-50 bg-white left-16 md:left-12 bottom-9 lg:hidden mx-3 mr-6   text-lg w-[50%] sm:w-[50%] md:w-[50%] relative  font-bold text-gray-700 border-[1px] border-[#ACACAC] p-4 rounded shadow-md  justify-start items-start  gap-3 pb-4'
+                    >
+
+
+                        <div className=' justify-start items-start'>
+                            <img className=' h-[25px] object-contain items-start justify-start' src={rc} alt='' />
+                            <p className=' text-sm text-[#00401A] font-[500] pt-3'>Convenient order</p>
+                        </div>
+
+
+
+
+
+                    </div>
+
+
                 </div>
                 <div className='w-[100%] md:w-[80%] lg:w-[50%] flex flex-col justify-center gap-3 mb-8 md:mb-0  '>
                     <h2 className='font-semibold text-xl md:text-xl  lg:text-2xl'>Delivering Convenience with Every Parcel</h2>
@@ -154,85 +196,67 @@ const Skills = () => {
 
             <Offers />
 
-            <div className='px-10 md:px-16 py-8'>
-                <h3 className='text-2xl md:text-2xl font-semibold pb-4'>Our Courses</h3>
-                <p>Handpicked instructors and expertly designed courses for modern students and entrepreneurs</p>
+            <div className='px-10 md:px-16 py-8 items-center mt-20'>
+                <h3 className='text-2xl md:text-2xl font-semibold pb-4 text-center'>Delivery Options Tailored to Your Needs</h3>
+                <p className='text-center'>We offer two delivery options you can choose from</p>
             </div>
 
-            <div className='w-full relative  px-8 sm:px-8 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-start '>
-                <div className='flex flex-col items-start space-y-[1px]'>
+            <div className='w-full md:w-[60%] relative  px-8 sm:px-8 md:pl-16 md:left-72 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 items-start justify-around '>
+                <div className='flex flex-col items-start space-y-[1px] border p-3 shadow-md shadow-gray-400'>
                     <img src={ca} alt=""
-                        className='h-40 w-full object-cover'
+                        className='h-45 w-full object-cover'
                     />
-                    <div className=' shadow-md shadow-gray-400 w-full'>
-                        <div className='flex flex-row justify-between pt-2 px-4'>
-                            <div className=''>
-                                <h2 className='font-semibold'>Business Analysis</h2>
-                                <div className='flex space-x-2 pt-1'>
-                                    <img src={st} alt="" className='object-contain w-[45%] ' />
-                                    <p className='text-xs'>5.00</p>
-                                </div>
+                    <div className='  w-full'>
+                        <div className='flex flex-row justify-between pt-2 px-1 items-start'>
+                            <div className='pt-4'>
+                                <h2 className='font-semibold text-[#1E1E1E] text-2xl'>Premium Class Delivery</h2>
+
                             </div>
-                            <p className='text-xs pt-1 text-blue-500'>Learn more>>> </p>
+                            <p className='text-xs pt-1 text-blue-500'> </p>
                         </div>
 
-                        <div className='flex flex-row justify-between pt-4 px-4'>
+                        <div className='flex flex-row justify-between pt-4 px-1'>
 
-                            <div>
-                                <p className='text-xs'>
-                                    <IoIosClock className='inline-block mr-1 text-blue-500' />
-                                    12 weeks
-                                </p>
-                            </div>
+                            <p className='text-base'>Need your parcel delivered fast? Our Premium Class Delivery ensures same-day delivery for urgent parcels. Ideal for time-sensitive items, this service guarantees that your package reaches its destination quickly and reliably.</p>
 
                         </div>
 
-                        <div className='flex flex-row justify-between px-4 pt-4 pb-4'>
-                            <p className='text-base font-semibold'>£600</p>
-                            <button className='hover:bg-blue-500 hover:text-white text-xs bg-white text-blue-500 border-1 border-blue-500' onClick={handleBusiness}>Enroll Now</button>
+                        <div className='flex flex-row-reverse justify-between px-1 mt-2 pt-4 pb-3'>
+                            <p className='text-base font-semibold'></p>
+                            <button className='hover:bg-green-700 hover:text-white text-base font-[600] bg-[#00401A] text-white border-1 border-none rounded-full' onClick={handleBusiness}>Book Now</button>
                         </div>
                     </div>
-
-
                 </div>
-                <div className='flex flex-col items-start space-y-[1px]'>
+                <div className='flex flex-col items-start space-y-[1px] border p-3 shadow-md shadow-gray-400'>
                     <img src={cb} alt=""
-                        className='h-40 w-full object-cover'
+                        className='h-45 w-full object-cover'
                     />
-                    <div className='shadow-md shadow-gray-400 w-full'>
-                        <div className='flex flex-row justify-between pt-2 px-4'>
-                            <div className=''>
-                                <h2 className='font-semibold'>Data Analysis</h2>
-                                <div className='flex space-x-2 pt-1'>
-                                    <img src={st} alt="" className='object-contain w-[45%] ' />
-                                    <p className='text-xs'>5.00</p>
-                                </div>
+                    <div className='  w-full'>
+                        <div className='flex flex-row justify-between pt-2 px-1 items-start'>
+                            <div className='pt-4'>
+                                <h2 className='font-semibold text-[#1E1E1E] text-2xl'>Standard Class Delivery</h2>
+
                             </div>
-                            <p className='text-xs pt-1 text-blue-500'>Learn more>>> </p>
+                            <p className='text-xs pt-1 text-blue-500'> </p>
                         </div>
 
-                        <div className='flex flex-row justify-between pt-4 px-4'>
+                        <div className='flex flex-row justify-between mt-2 pt-4 px-1'>
 
-                            <div>
-                                <p className='text-xs'>
-                                    <IoIosClock className='inline-block mr-1 text-blue-500' />
-                                    12 Weeks
-                                </p>
-                            </div>
+                            <p className='text-base'>For less time-sensitive deliveries, our Standard Class Delivery offers an affordable option with parcels delivered within 7 days. This service is perfect for regular deliveries that don’t require immediate attention.</p>
 
                         </div>
 
-                        <div className='flex flex-row justify-between px-4 pt-4 pb-4'>
-                            <p className='text-base font-semibold'>£600</p>
-                            <button className=' hover:bg-blue-500 hover:text-white text-xs bg-white text-blue-500 border-1 border-blue-500' onClick={handleData}>Enroll Now</button>
+                        <div className='flex flex-row-reverse justify-between px-1 pt-4 pb-3'>
+                            <p className='text-base font-semibold'></p>
+                            <button className='hover:bg-green-700 hover:text-white text-base font-[600] bg-[#00401A] text-white border-1 border-none rounded-full' onClick={handleBusiness}>Book Now</button>
                         </div>
                     </div>
-
-
                 </div>
+
+
             </div>
 
-            <div className='bg-custom-blue items-center mx-20 my-24 px-16 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+            {/* <div className='bg-custom-blue items-center mx-20 my-24 px-16 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
                 <div>
                     <h2 className='text-center text-3xl font-bold'>500+</h2>
                     <p className='text-center text-sm'>Students worldwide</p>
@@ -249,9 +273,9 @@ const Skills = () => {
                     <h2 className='text-center text-3xl font-bold'>700+</h2>
                     <p className='text-center text-sm'>Students community</p>
                 </div>
-            </div>
+            </div> */}
 
-            <div className="bg-contain md:bg-cover  " style={{ backgroundImage: `url(${bg})` }}>
+            {/* <div className="bg-contain md:bg-cover  " style={{ backgroundImage: `url(${bg})` }}>
                 <div className="overlay bg-cover h-full w-full flex flex-col gap-8 items-center py-10 " style={{ backgroundImage: `url(${lay})` }}>
                     <div className='items-center h-full flex flex-col gap-4' >
                         <h2 className='text-white text-center text-xl font-semibold'>Gain Practical Real-world Experiences</h2>
@@ -277,12 +301,12 @@ const Skills = () => {
                 </div>
 
 
-            </div >
+            </div > */}
 
-            <div className='bg-white pt-8 px-8 md:px-10 lg:px-16  flex flex-col md:flex-row'>
-                <div>
+            <div className='bg-white  pt-8 px-8 md:px-10 lg:pl-16  flex flex-col md:flex-row md:justify-between md:items-center relative '>
+                <div className='bg-gradient  px-4'>
                     <h2 className='text-2xl font-bold '>How it Works</h2>
-                    <p className='text-sm mt-4'>Your online learning made easy</p>
+                    <p className='text-sm mt-4'>Sending a parcel with MBD is simple and stress-free.</p>
 
                     <div>
                         <div className='flex flex-row mt-8 gap-4'>
@@ -290,56 +314,55 @@ const Skills = () => {
                             <img src={si} alt="" />
                             <div className=' flex flex-col  justify-between   '>
                                 <div className='relative top-1'>
-                                    <h3 className='font-semibold text-base'>Explore Courses</h3>
-                                    <p className='text-sm mt-2 w-[100%] md:w-[90%] '>Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.</p>
+                                    <h3 className='font-semibold text-base'>Book Your Delivery</h3>
+                                    <p className='text-sm mt-2 w-[100%] md:w-[90%] '>Fill in the delivery details and choose your preferred service.</p>
                                 </div>
 
                                 <div className='relative top-5 md:top-5 lg:top-3'>
-                                    <h3 className='font-semibold text-base'>Sign Up and Pay</h3>
-                                    <p className='text-sm mt-2 w-[100%] md:w-[90%]'>Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.</p>
+                                    <h3 className='font-semibold text-base'>Pay Securely Online</h3>
+                                    <p className='text-sm mt-2 w-[100%] md:w-[90%]'>Make payments through our safe and easy payment gateway.</p>
                                 </div>
 
                                 <div className='relative top-10 md:top-10 lg:top-5'>
-                                    <h3 className='font-semibold  text-base'>Start Learning</h3>
-                                    <p className='text-sm mt-2 w-[100%] md:w-[90%]'>Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.</p>
+                                    <h3 className='font-semibold  text-base'>Track Your Parcel</h3>
+                                    <p className='text-sm mt-2 w-[100%] md:w-[90%]'>Get real-time updates from pick-up to final delivery.</p>
                                 </div>
                             </div>
                         </div>
-                        <button className=' hover:scale-110 mt-20 md:mt-16 bg-new-blue text-white my-0 md:my-4 lg:mt-16 '>Get Started</button>
+                        <button className=' hover:scale-110 mt-20 md:mt-16 bg-[#00401A] font-[600] rounded-full text-white my-0 md:my-4 lg:mt-16 '>Get Started</button>
                     </div>
                 </div>
 
-                <div className='my-8 w-full xl:w-[60%]'>
-                    <img src={wk} alt="" className='w-full rounded-bl-3xl rounded-tr-3xl h-[100%] xl:h-[77%] object-cover xl:object-cover ' />
+                <div className='my-8 w-full xl:w-[50%]'>
+                    <img src={wk} alt="" className=' rounded-bl-3xl rounded-tr-3xl h-[100%] xl:h-[75%] object-cover xl:object-cover ' />
                 </div>
 
 
             </div>
 
-            <div className='bg-new-blue py-8 '>
-                <div className='flex flex-row justify-between px-8 md:px-12 lg:px-20    '>
-                    <h3 className='text-white text-xl md:text-2xl font-semibold'>What our students have to say</h3>
-                    <div className='hidden md:flex flex-row gap-3 '>
-
-                    </div>
+            <div className='bg-white py-8 '>
+                <div className='flex flex-col justify-center px-8 md:px-12 lg:px-20 items-center    '>
+                    <h3 className='text-[#001A0A] text-xl md:text-4xl font-semibold items-center text-center'>What Our Clients Say</h3>
+                    <p className='text-center text-lg pt-2'>See why businesses and individuals trust MBD for their local deliveries.</p>
                 </div>
                 <div>
-                    <Slider {...settings} className=' w-[92%] px-8 md:px-12 lg:px-20 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16'>
+                    <Slider {...settings} className='  w-[92%] px-8 md:px-12 lg:px-20 mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16'>
                         {reviews.map((review, index) => (
-                            <div key={index}>
-                                <div className='flex flex-row bg-custom-blue px-8 py-4 rounded-tr-3xl '>
+                            <div key={index} className='border'>
+                                <div className='flex flex-row bg-white px-8 py-4 rounded-tr-3xl  '>
                                     <div>
-                                        <img src={pr} alt='' className='rounded-full object-contain' />
+                                        <img src={rr} alt='' className='rounded-full object-contain' />
                                     </div>
                                     <div className='ml-6 mt-3'>
-                                        <h3 className='font-semibold'>{review.name}</h3>
-                                        <p className='text-xs mt-2'>{review.role}</p>
+                                        <h3 className='font-[700]'>{review.name}</h3>
+                                        <p className='text-xs mt-2 text-[#00401A]'>{review.role}</p>
                                     </div>
                                 </div>
+                                <hr className='mx-6' />
                                 <div className='rounded-bl-3xl bg-white px-10 py-6'>
-                                    <p className=' font-worksans text-new-blue text-3xl'>"</p>
+                                    <p className=' font-worksans text-[#FFA62B] text-3xl'>"</p>
                                     <p className='text-sm'>{review.text}</p>
-                                    <p className=' flex justify-end mt-2 font-worksans text-new-blue text-3xl'>"</p>
+                                    <p className=' flex justify-end mt-2 font-worksans text-[#FFA62B] text-3xl'>"</p>
                                 </div>
                             </div>
                         ))}
@@ -350,68 +373,34 @@ const Skills = () => {
 
             </div>
 
-            <div className='hidden md:block bg-white '>
-                <div className="py-16 mt-6 items-center flex flex-col  "
-                    style={{
-                        backgroundImage: `url(${wb})`,
-                        backgroundSize: 'contain',
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'center',
 
+            <div className='bg-white  pt-8 px-8 md:px-10 lg:pl-16  flex flex-col md:flex-row md:justify-between md:items-center relative '>
+                <div className='bg-white  pl-8 pt-8'>
+                    <h2 className='text-2xl lg:text-5xl font-bold '>Ready to Send a Parcel?</h2>
+                    <p className='text-sm mt-4'>Experience seamless parcel deliveries with MBD.</p>
+                    <button className=' hover:scale-110 mt-10 md:mt-8 bg-[#00401A] font-[600] rounded-full text-white my-0 md:my-4 lg:mt-8 '>Get Started Now</button>
 
-                    }}
-                >
-                    <h2 className=' text-lg md:text-lg lg:text-2xl  font-semibold items-center text-center'>Our Alumni have gone on to work at these organizations after training</h2>
-
-                    <div className='mt-4 w-[80%]'>
-                        <div className='grid grid-cols-2 md:grid-cols-4 gap-6 mt-4 mx-8  '>
-                            <div><img src={ns} alt="" className='object-contain w-[75%]  relative top-4' /></div>
-                            <div><img src={pw} alt="" className='object-contain w-[60%] relative top-2' /></div>
-                            <div><img src={jg} alt="" className='object-contain relative top-1 right-2 w-[70%] ' /></div>
-                            <div><img src={bm} alt="" className='object-contain w-[80%] relative top-7 ' /></div>
+                    <div className=' w-[92%] md:w-[100%] lg:w-[99%] bg-[#E6ECE8] items-center mx-0 my-8 px-4 py-8 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8'>
+                        <div>
+                            <h2 className='text-left text-3xl font-bold'>250+</h2>
+                            <p className='text-left text-base md:text-sm lg:text-sm xl:text-base'>Completed Delivery</p>
                         </div>
-                        <div className='grid grid-cols-2 md:grid-cols-3 mt-10 gap-5 mx-20 pl-5'>
-
-                            <div><img src={cv} alt="" className='object-contain relative top-3 w-[50%]' /></div>
-                            <div><img src={ll} alt="" className='object-contain relative top-7 w-[65%]' /></div>
-                            <div><img src={hm} alt="" className='object-contain relative top-3 w-[55%]' /></div>
-
+                        <div>
+                            <h2 className='text-left text-3xl font-bold'>200+</h2>
+                            <p className='text-left text-base md:text-sm lg:text-sm xl:text-base'>Satisfied Clients</p>
                         </div>
-
+                        <div>
+                            <h2 className='text-left text-3xl font-bold'>7+</h2>
+                            <p className='text-left text-base md:text-sm lg:text-sm xl:text-base'>Years Experience</p>
+                        </div>
+                       
                     </div>
                 </div>
 
-            </div>
-            <div className=' md:hidden bg-white '>
-                <div className="py-20 mt-6 items-center flex flex-col  "
-                    style={{
-                        backgroundImage: `url(${mb})`,
-                        backgroundSize: 'contain',
-                        backgroundPosition: 'center',
-                        width: '100%'
-
-
-                    }}
-                >
-                    <h2 className=' text-base  font-bold items-center text-center mx-4'>Our Alumni have gone on to work at these organizations after training</h2>
-
-                    <div className='mt-4 w-[85%]'>
-                        <div className='grid grid-cols-2 md:grid-cols-4 gap-6 mt-4 mx-8  '>
-                            <div><img src={ns} alt="" className='object-contain w-[75%]  relative top-4' /></div>
-                            <div><img src={pw} alt="" className='object-contain w-[70%] relative top-2' /></div>
-                            <div><img src={jg} alt="" className='object-contain relative top-1 right-2 w-[80%] ' /></div>
-                            <div><img src={bm} alt="" className='object-contain w-[90%] relative top-7 ' /></div>
-                        </div>
-                        <div className='grid grid-cols-2 md:grid-cols-3 mt-10 gap-5 mx-10 pl-5'>
-
-                            <div><img src={cv} alt="" className='object-contain relative top-3 right-6 w-[100%]' /></div>
-                            <div><img src={ll} alt="" className='object-contain relative top-3 w-[100%]' /></div>
-                            <div><img src={hm} alt="" className='object-contain relative top-5 left-10 w-[95%]' /></div>
-
-                        </div>
-
-                    </div>
+                <div className='my-8 w-[100%] md:w-[50%] xl:w-[50%] ml-6 md:ml-0'>
+                    <img src={hm} alt="" className=' rounded-bl-3xl rounded-tr-3xl h-[100%] xl:h-[75%] object-cover xl:object-cover ' />
                 </div>
+
 
             </div>
             <FAQ />

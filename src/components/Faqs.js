@@ -28,31 +28,34 @@ const FAQ = () => {
   };
 
   return (
-    <div className='bg-white pt-16'>
-        <div className='flex items-center justify-center mb-6'>
-        <h2 className='text-2xl font-bold'>Frequently Asked Questions</h2>
-        </div>
-        <div className=" flex flex-col gap-6 justify-center items-center   mx-0 ">
-      {faqs.map((faq, index) => (
-        <div key={index} className=" w-[90%] md:w-[80%] faq-item border border-gray-300 ">
-          <div className="question flex justify-between items-center cursor-pointer p-4" onClick={() => toggleAnswer(index)}>
-          <h3 className='w-[85%] md:w-[100%] font-semibold'>{faq.question}</h3>
-            <div className="toggle-btn bg-new-blue w-6 h-6 rounded-full  text-white font-bold text-xl flex justify-center items-center ">
-                <p className='pb-0.5 md:pb-1 text-white'>{activeIndex === index ? '-' : '+'}</p>
-                </div>
+    <div>
+      {/* <p></p> */}
+    
+    {/* // <div className='bg-white pt-16'>
+    //     <div className='flex items-center justify-center mb-6'>
+    //     <h2 className='text-2xl font-bold'>Frequently Asked Questions</h2>
+    //     </div>
+    //     <div className=" flex flex-col gap-6 justify-center items-center   mx-0 ">
+    //   {faqs.map((faq, index) => ( */}
+    {/* //     <div key={index} className=" w-[90%] md:w-[80%] faq-item border border-gray-300 ">
+    //       <div className="question flex justify-between items-center cursor-pointer p-4" onClick={() => toggleAnswer(index)}>
+    //       <h3 className='w-[85%] md:w-[100%] font-semibold'>{faq.question}</h3>
+    //         <div className="toggle-btn bg-new-blue w-6 h-6 rounded-full  text-white font-bold text-xl flex justify-center items-center ">
+    //             <p className='pb-0.5 md:pb-1 text-white'>{activeIndex === index ? '-' : '+'}</p>
+    //             </div>
            
-          </div>
-          <div className={`answer p-4 ${activeIndex === index ? 'block' : 'hidden'}`}>
-            <p className='w-[85%] md:w-[100%] '>{faq.answer}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-    <div className='mt-8 flex justify-center'>
+    //       </div>
+    //       <div className={`answer p-4 ${activeIndex === index ? 'block' : 'hidden'}`}>
+    //         <p className='w-[85%] md:w-[100%] '>{faq.answer}</p>
+    //       </div>
+    //     </div>
+    //   ))}
+    // </div> */}
+    {/* <div className='mt-8 flex justify-center'>
         <button className='bg-new-blue text-white text-sm hover:scale-90' onClick={handleButtonClick}>See More Questions</button>
-    </div>
+    </div> */}
 
-    <div className='bg-custom-blue mt-10 flex flex-col md:flex-row h-[30vh] md:h-full '>
+    {/* <div className='bg-custom-blue mt-10 flex flex-col md:flex-row h-[30vh] md:h-full '>
         <div className='flex flex-row py-8 pl-8 pr-0 md:pl-10 md:px-8 lg:px-20 justify-between'>
             <div className='w-[100%] md:w-[100%] lg:w-[70%] flex flex-col gap-6 md:gap-4 xl:ml-4'>
                 <h2 className='text-xl font-semibold'>Subscribe to Our Weekly Newsletters</h2>
@@ -65,7 +68,7 @@ const FAQ = () => {
             <input type="text" placeholder='Enter Your Email' className='w-[95%] md:w-[75%] text-sm px-4 py-2 ' />
             <button className=' text-sm md:text-base my-2 px-3 md:px-3 lg:px-6 bg-new-blue text-white hover:scale-90'>Subscibe</button>
             </div>
-    </div>
+    </div> */}
     <Footer />
     </div>
   );

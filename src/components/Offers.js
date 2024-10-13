@@ -42,7 +42,7 @@ const Offers = () => {
    ];
 
    return (
-      <div className=' mx-0 md:mx-16 relative top-16 bg-[#E6ECE8] py-8'>
+      <div className=' mx-0 md:mx-16 relative top-16 bg-[#E6ECE8] py-8 mb-4'>
          <h2 className=' items-center text-center text-4xl text-[#001A0A] font-[600] pb-6'>Make your work easier with us</h2>
          <div className='w-full relative  mx-auto   px-20 sm:px-0 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-center justify-start  '>
             {offerData.map((offer, index) => (
@@ -56,7 +56,7 @@ const Offers = () => {
                   <div className='items-start'>
                      <h4 className='font-semibold'>{offer.title}</h4>
                   </div>
-                  <p className='text-left w-[98%] font-normal px-6 sm:px-2 md:px-0 text-sm sm:text-xs md:text-sm'>
+                  <p className='item-start text-left w-[98%] font-normal px-0 sm:px-0 md:px-0 text-sm sm:text-xs md:text-sm'>
                      {offer.description}
                   </p>
                </div>
