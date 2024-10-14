@@ -14,7 +14,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const handleScroll = () => {
-    if (window.scrollY > 600) {
+    if (window.scrollY > 200) {
       setScrolling(false);
     } else {
       setScrolling(true);
@@ -68,7 +68,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`bg-[#FFFFFF99] z-50 fixed w-full flex justify-between lg:justify- py-2 sm:py-2 md:py-0 lg:py-0 px-2 sm:px-4 md:px-4 lg:px-16 items-center
+    <div className={`bg-[#FFFFFF99] z-50 fixed w-full flex justify-between lg:justify- py-2 sm:py-2 md:py-0 lg:py-0 px-2 sm:px-4 md:px-4 lg:px-4 xl:px-16 items-center
     ${scrolling ? 'scrolled' : 'opacity-0 transition duration-1000 ease-out' // Apply a different class when scrolling
       }`}
     >
@@ -76,7 +76,7 @@ const Navbar = () => {
 
       {/* Visible on md and larger screens */}
       <div className='hidden lg:flex  flex-row justify-between   '>
-        <ul className='flex flex-row mr-28 px-4 space-x-8  lg:mr-36 md:ml-16'>
+        <ul className='flex flex-row mr-28 px-4 space-x-8  lg:mr-0 xl:mr-28 '>
           <li
             className='hover:text-[#FFA62B] hover:cursor-pointer text-lg text-[#3B3B3B] py-8 px-2'
             onClick={() => navigateToPage('/')}
@@ -114,7 +114,7 @@ const Navbar = () => {
           </button>
           <button
             className='bg-[#00401A] my-6 border-[#00401A] hover:bg-[#FFA62B] hover:text-[#00401A] text-white text-lg font-semibold px-6 mx-2 border-none rounded-full'
-            onClick={() => navigateToPage('/register')}
+            onClick={() => navigateToPage('/faqdtl')}
           >
             Sign Up
           </button>
@@ -174,7 +174,7 @@ const Navbar = () => {
             </button>
             <button
               className='bg-[#00401A] m-4 border-none transform transition-transform hover:scale-110 text-white text-xl p-4 mx-2'
-              onClick={() => navigateToPage('/register')}
+              onClick={() => navigateToPage('/faqdtl')}
             >
               Sign Up
             </button>

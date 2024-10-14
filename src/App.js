@@ -13,6 +13,9 @@ import ScrollToTop from './components/ScrollToTop';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import TutorLogin from './components/TutorLogin';
+import Footer from './components/Footer';
+import Bookd from './components/Bookd';
+import Bookmd from './components/Bookmd';
 
 
 // Layout with Navbar
@@ -20,6 +23,7 @@ const MainLayout = ({ children }) => (
   <>
     <Navbar />
     {children}
+    {/* <Footer /> */}
   </>
 );
 
@@ -77,6 +81,22 @@ function App() {
             element={
               <MainLayout>
                 <Faqdtl />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/bookd"
+            element={
+              <MainLayout>
+                <Bookd />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/bookmd"
+            element={
+              <MainLayout>
+                <Bookmd />
               </MainLayout>
             }
           />

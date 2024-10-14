@@ -1,73 +1,132 @@
 // FAQ.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import bg from '../images/faqbg.png'
 import bs from '../images/faqsm.png'
 import Footer from './Footer';
+import { useNavigate } from 'react-router-dom';
 
 
 const Faqdtl = () => {
-    const faqs = [
-        { question: 'Are classes online or physical?', answer: 'All classes hold online (virtually).' },
-        { question: 'Are classes live sessions or prerecorded?', answer: 'All classes are live sessions. However, live sessions are recorded in case you miss any class or want to go over what was taught in the class.' },
-        { question: 'What if I miss a class?', answer: 'All classes are recorded from live sessions. You will have access to the recorded class.' },
-        { question: 'How many days in a week do classes hold?', answer: 'Two days in a week per course.' },
-        { question: 'What are the days and time?',
-          answer: `
-          Business Analysis:
-            Monday 5:30pm-7:30pm UK Time
-            Wednesday 5:30pm-8:30pm UK Time
-      |
-          Data Analysis:
-            Tuesday 5:30pm-8:30pm UK Time
-            Thursday 5:30pm-8:30pm UK Time
-          ` },
-        { question: 'How much does the training cost?', answer: '£600 for outright payment. £650 for installment payment (maximum of twice, £350 initially and £300 after one month).' },
-        { question: 'Can payment be done in installments?', answer: 'Yes, a maximum of two installments per course.' },
-        { question: 'What is the installment plan?', answer: '£650 for installment payment (maximum of twice, £350 initially and £300 after one month).' },
-        { question: 'How long does the training last?', answer: '12 weeks.' },
-        { question: 'Can I take two courses at a time?', answer: 'Yes. The training is flexible, and classes for each course hold on different days.' },
-        { question: 'Can I join from outside the United Kingdom (UK)?', answer: 'Yes. You can join the training from any part of the world.' },
-        { question: 'What are the requirements for the training?', answer: 'To enhance your learning experience, you need a working computer and good internet service.' },
-        { question: 'Do I need to have background knowledge in tech before joining the training?', answer: 'No, you don’t need to have background knowledge in tech. The courses are designed to teach you all you need to know from the basics, simplified and extensive.' },
-        { question: 'Is this training enough to get a job?', answer: 'Yes, it is enough to get a job in your chosen course. This training is comprehensive and will take you through the beginner level to the intermediate level in your tech career.' },
-        { question: 'Will there be job search support?', answer: 'Yes. During and after the training, you will enjoy interview coaching by experts with professional CV writing to aid your job search.' },
-        { question: 'Can I get sponsorship in the UK from tech jobs?', answer: 'Yes. Tech jobs are in the shortage occupation list, so you can be sponsored.' },
-        { question: 'Is there any benefit for referring someone?', answer: 'Yes, there is £50 referral bonus per referral on every referred person who completes payment.' },
-      ];
+  const navigate = useNavigate();
 
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
-  const toggleAnswer = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+
+  const isSubmitDisabled =
+    !firstName || !email || !password || !confirmPassword || !phoneNumber;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // navigate('bookd');
+
+    // Add your form submission logic here
+  };
+ 
+
+
+  const navigateToPage = (path) => {
+    navigate(path);
+    // setNav(false); // Close the menu after navigation
   };
 
   return (
-    <div className='bg-white pt-12 md:mt-0 lg:pt-12'>
-       <div className='mt-6'>
-       <div className=' hidden md:flex items-center justify-center mb-6 bg-cover md:bg-contain h-[15vh] md:h-[22vh] xl:h-[62vh]' style={{ backgroundImage: `url(${bg})`,  backgroundRepeat: 'no-repeat' }}>
-        <h2 className='text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white'>Frequently Asked Questions</h2>
-        </div>
-       <div className=' md:hidden flex items-center justify-center mb-6 bg-cover  h-[45vh] ' style={{ backgroundImage: `url(${bs})`,  backgroundRepeat: 'no-repeat' }}>
-        <h2 className='text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white'>Frequently Asked Questions</h2>
-        </div>
-        <div className=" flex flex-col gap-6 justify-center items-center   mx-0 py-8 ">
-      {faqs.map((faq, index) => (
-        <div key={index} className=" w-[90%] md:w-[80%] faq-item border border-gray-300 ">
-          <div className="question flex justify-between items-center cursor-pointer p-4" onClick={() => toggleAnswer(index)}>
-          <h3 className='w-[85%] md:w-[100%]'>{faq.question}</h3>
-            <div className="toggle-btn bg-new-blue w-6 h-6 rounded-full  text-white font-bold text-xl flex justify-center items-center ">
-                <p className='pb-0.5 md:pb-1 text-white'>{activeIndex === index ? '-' : '+'}</p>
-                </div>
-           
+
+    <div className='h-[80vh]'>
+
+      <div className=' w-[100%] lg:h-[80vh] xl:h-[140vh] bg-[#E6ECE8] pt-20 pb-10 md:pt-20 xl:pt-40 md:mt-0 md:pb-16 xl:pb-20  flex flex-col justify-center xl:justify-normal items-center  '>
+        <div className='bg-white w-[80%] md:w-[70%] xl:w-[40%] '>
+
+
+          <div className='px-10 md:px-14 py-8 '>
+            <p className=' text-2xl md:text-4xl font-semibold'>Create an account</p>
+            <p className='text-sm md:text-lg font-normal pt-3'>Create a free account to get started with your delivery booking</p>
           </div>
-          <div className={`answer p-4 ${activeIndex === index ? 'block' : 'hidden'}`}>
-            <p className='w-[85%] md:w-[100%]'>{faq.answer}</p>
+
+          <form action="" className=' flex flex-col justify-center gap-5'>
+            <div className='flex flex-col px-10 md:px-16 w-[100%] lg:w-[100%] gap-2  '>
+              <label htmlFor="" className='font-semibold'>Full Name</label>
+              <input
+                type='text'
+                placeholder='Enter your full name'
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className='border-2 border-gray-400 rounded-md py-1.5 px-2 placeholder-gray-500 placeholder text-sm'
+              />
+            </div>
+            <div className='flex flex-col px-10 md:px-16 w-[100%] lg:w-[100%] gap-2  '>
+              <label htmlFor="" className='font-semibold'>Email Address</label>
+              <input
+                type='text'
+                placeholder='Enter your email address'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className='border-2 border-gray-400 rounded-md py-1.5 px-2 placeholder-gray-500 placeholder text-sm'
+              />
+
+            </div>
+            <div className='flex flex-col px-10 md:px-16 w-[100%] lg:w-[100%] gap-2  '>
+              <label htmlFor="" className='font-semibold'>Phone Number</label>
+              <input
+                type="number"
+                placeholder='Enter your phone number'
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                className='border-2 border-gray-400 rounded-md py-1.5 px-2 placeholder-gray-500 placeholder text-sm'
+              />
+            </div>
+
+            <div className='flex flex-col px-10 md:px-16 w-[100%] lg:w-[100%] gap-2  '>
+              <label htmlFor="" className='font-semibold'>Password</label>
+              <input
+                type="password"
+                placeholder='Enter your password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className='border-2 border-gray-400 rounded-md py-1.5 px-2 placeholder-gray-500 placeholder text-sm'
+              />
+
+            </div>
+            <div className='flex flex-col px-10 md:px-16 w-[100%] lg:w-[100%] gap-2  '>
+              <label htmlFor="" className='font-semibold'>Confirm Password</label>
+              <input
+                type="password"
+                placeholder='Confirm your password'
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className='border-2 border-gray-400 rounded-md py-1.5 px-2 placeholder-gray-500 placeholder text-sm'
+              />
+
+            </div>
+
+
+
+            <div className='flex flex-col px-10 md:px-16 w-[65%] xl:w-[60%] gap-1 mt-12  '>
+              <button
+                type='submit'
+                disabled={isSubmitDisabled}
+                onClick={() => navigateToPage('/bookd')}
+                className={`bg-[#00401A] text-white  text-sm md:text-lg rounded-full font-semibold  hover:bg-green-700 ${isSubmitDisabled && 'opacity-50 cursor-not-allowed'
+                  }`}
+              >Create Account
+              </button>
+            </div>
+
+          </form>
+          <div className='py-4 px-10 md:px-16 pb-8'>
+            <p className='text-sm'>By signing up, you agree to our <span className='text-[#00401A] font-semibold'>Terms of service</span> and <span className='text-[#00401A] font-semibold'>privacy policy</span></p>
           </div>
+
+
+
         </div>
-      ))}
-    </div>
-       </div>
-       <Footer />
+
+      </div>
+      <Footer />
     </div>
   );
 };
