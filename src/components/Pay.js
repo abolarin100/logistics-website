@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Footer from './Footer';
 import { useNavigate } from 'react-router-dom';
-import { FaCreditCard, FaLandmark  } from "react-icons/fa6";
+import { FaCreditCard, FaLandmark } from "react-icons/fa6";
+import hm from '../images/success.png'
 
 const Pay = () => {
     const navigate = useNavigate();
@@ -43,6 +44,43 @@ const Pay = () => {
     const [isPremiumSelected, setIsPremiumSelected] = useState(false);
     const [isStandardSelected, setIsStandardSelected] = useState(false);
     const [showModal, setShowModal] = useState(true); // Modal visibility state
+    const [cardNumber, setCardNumber] = useState('');
+    const [expiryDate, setExpiryDate] = useState('');
+    const [cvv, setCvv] = useState('');
+
+    const closeModal = () => {
+        setShowModal(false);
+    };
+
+    // Format card number to include spaces every 4 digits and limit to 16 digits
+    const handleCardNumberChange = (e) => {
+        let value = e.target.value.replace(/\s+/g, ''); // Remove all spaces
+        if (value.length > 16) return; // Limit to 16 digits
+        // Add space every 4 digits
+        setCardNumber(value.replace(/(\d{4})/g, '$1 ').trim());
+    };
+
+    // Limit expiry date to 5 characters and format as MM/YY
+    const handleExpiryDateChange = (e) => {
+        let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+        if (value.length > 4) return; // Limit to 4 digits
+        if (value.length > 2) {
+            value = `${value.slice(0, 2)}/${value.slice(2, 4)}`; // Add '/' after MM
+        }
+        setExpiryDate(value);
+    };
+
+    // Limit CVV to 3 digits
+    const handleCvvChange = (e) => {
+        let value = e.target.value.replace(/\D/g, ''); // Remove non-digits
+        if (value.length > 3) return; // Limit to 3 digits
+        setCvv(value);
+    };
+
+
+    const PREMIUM_DELIVERY_FEE = 500;
+    const STANDARD_DELIVERY_FEE = 400;
+    const SERVICE_CHARGE = 50;
 
     // Load data from localStorage on component mount
     useEffect(() => {
@@ -73,18 +111,40 @@ const Pay = () => {
         if (savedStandardSelection) setIsStandardSelected(JSON.parse(savedStandardSelection));
     }, []);
 
+    const isSubmitDisabled = !paymentMethod;
 
+    // Calculate total fee based on delivery option
+    const calculateTotalFee = () => {
+        const deliveryFee = isPremiumSelected ? PREMIUM_DELIVERY_FEE : STANDARD_DELIVERY_FEE;
+        return deliveryFee + SERVICE_CHARGE;
+    };
+
+    const handleCardClick = () => {
+        setPaymentMethod('card');
+    };
+
+    const handleBankClick = () => {
+        setPaymentMethod('bank');
+    };
+
+
+
+    const navigateToPage = (path) => {
+        navigate(path);
+        // setNav(false); // Close the menu after navigation
+    };
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate('/bookmd'); // Navigating to the next page
+        setShowModal(true); // Show the modal when button is clicked
+        // navigate('/'); // Navigating to the next page
     };
 
     return (
         <div className='h-[80vh]'>
-            <div className='w-[100%] lg:h-[110vh] xl:h-[160vh] bg-[#E6ECE8] pt-20 pb-10 md:pt-20 xl:pt-40 md:mt-0 md:pb-16 xl:pb-20 flex flex-col justify-center xl:justify-normal items-center'>
+            <div className='w-[100%] lg:h-[110vh] xl:h-[180vh] bg-[#E6ECE8] pt-20 pb-10 md:pt-20 xl:pt-40 md:mt-0 md:pb-16 xl:pb-20 flex flex-col justify-center xl:justify-normal items-center'>
                 <div className='bg-white w-[90%] md:w-[70%] xl:w-[40%] shadow-lg rounded-lg'>
                     <div className='px-10 md:px-14 pt-8'>
                         <p className='text-2xl md:text-4xl font-semibold text-center'>Book a Delivery</p>
@@ -106,66 +166,118 @@ const Pay = () => {
                                 <p className='font-normal text-[#00401A] text-base'>Cost Breakdown</p>
                                 <div className='flex justify-between mt-4'>
                                     <span className='text-[#3B3B3B] text-base font-[400]'>Delivery fee:</span>
-                                    <span className='text-[#3B3B3B] text-base font-[500]'>GH₵ 400</span>
+                                    <span className='text-[#3B3B3B] text-base font-[500]'> GH₵ {isPremiumSelected ? PREMIUM_DELIVERY_FEE : STANDARD_DELIVERY_FEE}
+                                    </span>
                                 </div>
                                 <div className='flex justify-between mt-2'>
                                     <span className='text-[#3B3B3B] text-base font-[400]'>Service charge:</span>
-                                    <span className='text-[#3B3B3B] text-base font-[500]'>GH₵ 50</span>
+                                    <span className='text-[#3B3B3B] text-base font-[500]'>GH₵ {SERVICE_CHARGE}</span>
                                 </div>
                                 <div className='flex justify-between font-semibold border-t border-[#F0F0F0] mt-6 pt-4'>
                                     <span className='text-[#3B3B3B] text-lg font-[400]'>Total:</span>
-                                    <span className='text-[#001A0A] text-base font-[600]'>GH₵ 450</span>
+                                    <span className='text-[#001A0A] text-base font-[600]'>GH₵ {calculateTotalFee()}</span>
                                 </div>
                             </div>
 
                             {/* Payment Method */}
                             <p className='text-lg font-semibold pt-6 mt-2 '>Select Payment Method</p>
                             <div className='mt-3'>
-                                <div className='flex items-center border border-[#ACACAC] px-2 py-3 rounded-md justify-between'>
-                                    <div>
-                                        <input
-                                            type='radio'
-                                            id='card'
-                                            name='paymentMethod'
-                                            value='card'
-                                            onChange={(e) => setPaymentMethod(e.target.value)}
-                                            className='mr-2 text-[#00401A] checked:text-[#00401A] text-xl focus:ring-0 '
-                                        />
-
-                                        <label htmlFor='card' className='text-sm font-[400]  text-[#001A0A]'>
-                                            Pay with card
-                                        </label>
+                                <div
+                                    onClick={handleCardClick}
+                                    className={`flex flex-col  border px-2 py-3 rounded-md justify-start cursor-pointer 
+                                     ${paymentMethod === 'card' ? 'border-[#00401A]' : 'border-[#ACACAC]'}`}
+                                >
+                                    <div className=' flex flex-row justify-between items-center'>
+                                        <div className='flex flex-row justify-between items-center'>
+                                            <span
+                                                className={`w-4 h-4 border-2 rounded-full mr-2 
+                                      ${paymentMethod === 'card' ? 'bg-[#00401A] border-[#00401A]' : 'border-[#00401A]'}`}
+                                            ></span>
+                                            <label className='text-sm font-[400] text-[#001A0A]'>
+                                                Pay with card
+                                            </label>
+                                        </div>
+                                        <FaCreditCard className='text-[#00401A] text-xl' />
                                     </div>
-                                    <FaCreditCard className='text-[#00401A]' />
+
+                                    {/* Conditionally Render Add Card Details */}
+                                    {paymentMethod === 'card' && (
+
+                                        <div className='flex flex-col mt-4'>
+                                            <div className='flex flex-col w-[100%] lg:w-[100%] gap-2  '>
+                                                <p className='text-sm md:text-sm font-[500] pt-3 text-left text-[#3B3B3B] '>Add Card Details</p>
+                                            </div>
+                                            <div className='flex flex-col  w-[100%] lg:w-[80%] gap-2 mt-4  '>
+                                                <label htmlFor="" className='font-[400] text-sm text-[#3B3B3B]'>Card number</label>
+                                                <input
+                                                    type='text'
+                                                    placeholder='1234 5678 9012 3456'
+                                                    value={cardNumber}
+                                                    onChange={handleCardNumberChange}
+                                                    maxLength="19" // For 16 digits and 3 spaces
+                                                    className='border border-[#ACACAC] rounded-sm py-1.5 px-2 placeholder-gray-500 placeholder text-sm'
+                                                />
+                                            </div>
+                                            <div className='flex flex-row  w-[100%] lg:w-[80%] gap-2 mt-2  '>
+                                                <div className='flex flex-col  w-[48.5%] lg:w-[100%] gap-2 mt-1  '>
+                                                    <label htmlFor="" className='font-[400] text-sm text-[#3B3B3B]'>Expiry date</label>
+                                                    <input
+                                                        type='text'
+                                                        placeholder='MM/YY'
+                                                        value={expiryDate}
+                                                        onChange={handleExpiryDateChange}
+                                                        maxLength="5"
+
+                                                        className='border border-[#ACACAC] rounded-sm py-1.5 px-2 placeholder-gray-500 placeholder text-sm'
+                                                    />
+                                                </div>
+                                                <div className='flex flex-col  w-[48.5%] lg:w-[100%] gap-2 mt-1  '>
+                                                    <label htmlFor="" className='font-[400] text-sm text-[#3B3B3B]'>CVV</label>
+                                                    <input
+                                                        type='text'
+                                                        placeholder='123'
+                                                        value={cvv}
+                                                        onChange={handleCvvChange}
+                                                        maxLength="3"
+                                                        className='border border-[#ACACAC] rounded-sm py-1.5 px-2 placeholder-gray-500 placeholder text-sm'
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    )}
 
                                 </div>
-                                <div className='flex items-center border border-[#ACACAC] px-2 py-3 rounded-md justify-between mt-4'>
-                                    <div>
-                                        <input
-                                            type='radio'
-                                            id='bank'
-                                            name='paymentMethod'
-                                            value='card'
-                                            onChange={(e) => setPaymentMethod(e.target.value)}
-                                            className='mr-2 text-[#00401A] checked:text-[#00401A] text-xl focus:ring-0 '
-                                        />
-
-                                        <label htmlFor='bank' className='text-sm font-[400]  text-[#001A0A]'>
-                                        Pay with bank transfer
-                                        </label>
+                                <div
+                                    onClick={handleBankClick}
+                                    className={`flex flex-col border px-2 py-3 rounded-md justify-start cursor-pointer mt-4
+                                     ${paymentMethod === 'bank' ? 'border-[#00401A]' : 'border-[#ACACAC]'}`}
+                                >
+                                    <div className=' flex flex-row justify-between items-center'>
+                                        <div className='flex flex-row justify-between items-center'>
+                                            <span
+                                                className={`w-4 h-4 border-2 rounded-full mr-2 
+                                   ${paymentMethod === 'bank' ? 'bg-[#00401A] border-[#00401A]' : 'border-[#00401A]'}`}
+                                            ></span>
+                                            <label className='text-sm font-[400] text-[#001A0A]'>
+                                                Pay with bank transfer
+                                            </label>
+                                        </div>
+                                        <FaLandmark className='text-[#00401A] text-xl' />
                                     </div>
-                                    <FaLandmark className='text-[#00401A]' />
 
                                 </div>
 
-                             
+
                             </div>
 
                             {/* Proceed Button */}
                             <div className='flex flex-col px-0 md:px-0 w-[100%] xl:w-[100%] gap-1 mt-20 pb-12 '>
                                 <button
                                     type='submit'
-                                    className={`bg-[#00401A] text-white  text-sm md:text-lg rounded-full font-semibold  hover:bg-green-700 `}
+                                    disabled={isSubmitDisabled}
+                                    className={`bg-[#00401A] text-white  text-sm md:text-lg rounded-full font-semibold  hover:bg-green-700 ${isSubmitDisabled && 'opacity-50 cursor-not-allowed'
+                                    } `}
                                 >Proceed to Payment
                                 </button>
                             </div>
@@ -173,6 +285,49 @@ const Pay = () => {
                     </form>
                 </div>
             </div>
+
+            {showModal && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] sm:w-[400px] relative">
+                        {/* Close button */}
+                        <button
+                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+                            onClick={closeModal}
+                        >
+                            &times;
+                        </button>
+
+                        {/* Title */}
+                        <h2 className="text-lg font-semibold mb-4"></h2>
+
+                        <div className='flex flex-col justify-between items-center mt-2 gap-6'>
+                        <img src={hm} alt="" className=' rounded-bl-3xl rounded-tr-3xl h-[100%] xl:h-[75%] object-cover xl:object-cover ' />
+                        <p className='text-xl font-[500] text-[#001A0A] pt-3'>Payment Successful!</p> 
+                        <p className='text-base font-[400] px-1 text-center text-[#3B3B3B]'>Your delivery has been successfully booked. You will receive an email with more information.</p> 
+                        <button
+                             onClick={() => {
+                                // Handle payment logic here
+                                navigateToPage('/Bookd')
+                                closeModal();
+                                
+                            }}
+                                type="button"
+                                className=" my-4 px-6 py-2 bg-[#00401A] text-white rounded-full hover:bg-green-700 font-semibold"
+                            >
+                                Book Again
+                            </button>
+                      
+                        </div>
+
+                       
+
+                      
+                        
+
+                        
+                    </div>
+                </div>
+            )}
 
             <Footer />
         </div>
