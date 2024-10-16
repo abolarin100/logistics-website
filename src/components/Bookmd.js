@@ -6,16 +6,17 @@ import { useNavigate } from 'react-router-dom';
 import { FaShieldVirus, FaDiamondTurnRight } from "react-icons/fa6";
 
 const Bookmd = () => {
+    const navigate = useNavigate();
     const ProgressBar = ({ steps, currentStep }) => {
         return (
             <div className="flex justify-between mb-8">
                 {steps.map((step, index) => (
                     <div key={index} className="flex flex-col items-center">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mb-2 
-                  ${index + 1 <= currentStep ? 'bg-orange-500' : 'bg-gray-300'}`}>
+                  ${index + 1 <= currentStep ? 'bg-[#FFA62B]' : 'bg-gray-300'}`}>
                             {index + 1}
                         </div>
-                        <span className={`text-sm text-center ${index + 1 <= currentStep ? 'text-gray-800' : 'text-gray-400'}`}>
+                        <span className={`text-sm text-center ${index + 1 <= currentStep ? 'tex[#FFA62B]' : 'text-gray-400'}`}>
                             {step}
                         </span>
                     </div>
@@ -26,7 +27,7 @@ const Bookmd = () => {
 
     const steps = ['Delivery details', 'Delivery class', 'Review and confirm', 'Payment'];
     const currentStep = 2; // This would be dynamic in a real application
-    const navigate = useNavigate();
+    
 
 
     const [isPremiumSelected, setIsPremiumSelected] = useState(false);
@@ -37,16 +38,10 @@ const Bookmd = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Add your form submission logic here
+        navigate('/bookrw')
     };
 
-    // Load saved selection from localStorage when component mounts
-    useEffect(() => {
-        const savedPremiumSelection = localStorage.getItem('isPremiumSelected');
-        const savedStandardSelection = localStorage.getItem('isStandardSelected');
-
-        if (savedPremiumSelection) setIsPremiumSelected(JSON.parse(savedPremiumSelection));
-        if (savedStandardSelection) setIsStandardSelected(JSON.parse(savedStandardSelection));
-    }, []);
+    
 
     // Save premium selection to localStorage
     const handlePremiumClick = () => {
@@ -73,7 +68,7 @@ const Bookmd = () => {
     return (
         <div className='h-[80vh]'>
             <div className='w-[100%] lg:h-[80vh] xl:h-[110vh] bg-[#E6ECE8] pt-20 pb-10 md:pt-20 xl:pt-40 md:mt-0 md:pb-16 xl:pb-20 flex flex-col justify-center xl:justify-normal items-center'>
-                <div className='bg-white w-[80%] md:w-[70%] xl:w-[40%]'>
+                <div className='bg-white w-[90%] md:w-[70%] xl:w-[40%]'>
                     <div className='px-10 md:px-14 pt-8 '>
                         <p className=' text-2xl md:text-4xl font-semibold text-center '>Book a Delivery</p>
                         <p className='text-sm md:text-lg font-normal pt-3 text-center pb-10 '>Fill in the details below to book your parcel delivery.</p>

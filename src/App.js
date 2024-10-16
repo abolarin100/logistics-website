@@ -16,6 +16,8 @@ import TutorLogin from './components/TutorLogin';
 import Footer from './components/Footer';
 import Bookd from './components/Bookd';
 import Bookmd from './components/Bookmd';
+import Bookrw from './components/Bookrw';
+import Pay from './components/Pay';
 
 
 // Layout with Navbar
@@ -97,6 +99,22 @@ function App() {
             element={
               <MainLayout>
                 <Bookmd />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/bookrw"
+            element={
+              <MainLayout>
+                <Bookrw />
+              </MainLayout>
+            }
+          />
+          <Route
+            path="/pay"
+            element={
+              <MainLayout>
+                <Pay />
               </MainLayout>
             }
           />

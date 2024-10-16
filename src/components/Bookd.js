@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Bookd = () => {
+    const navigate = useNavigate();
 
     const ProgressBar = ({ steps, currentStep }) => {
         return (
@@ -13,10 +14,10 @@ const Bookd = () => {
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col items-center">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold mb-2 
-                  ${index + 1 <= currentStep ? 'bg-orange-500' : 'bg-gray-300'}`}>
+                  ${index + 1 <= currentStep ? 'bg-[#FFA62B]' : 'bg-gray-300'}`}>
                   {index + 1}
                 </div>
-                <span className={`text-sm ${index + 1 <= currentStep ? 'text-gray-800' : 'text-gray-400'}`}>
+                <span className={`text-sm ${index + 1 <= currentStep ? 'tex[#FFA62B]' : 'text-gray-400'}`}>
                   {step}
                 </span>
               </div>
@@ -27,7 +28,7 @@ const Bookd = () => {
 
       const steps = ['Delivery details', 'Delivery class', 'Review and confirm', 'Payment'];
       const currentStep = 1; // This would be dynamic in a real application
-    const navigate = useNavigate();
+   
 
     // Define separate state variables for each field
     const [firstName, setFirstName] = useState('');
@@ -85,6 +86,7 @@ const Bookd = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        navigate('/bookmd')
 
         // Add your form submission logic here
     };
@@ -92,7 +94,7 @@ const Bookd = () => {
 
     const navigateToPage = (path) => {
         navigate(path);
-        // setNav(false); // Close the menu after navigation
+       
     };
 
     return (
@@ -100,7 +102,7 @@ const Bookd = () => {
         <div className='h-[80vh]'>
 
             <div className=' w-[100%] lg:h-[110vh] xl:h-[230vh] bg-[#E6ECE8] pt-20 pb-10 md:pt-20 xl:pt-40 md:mt-0 md:pb-16 xl:pb-20  flex flex-col justify-center xl:justify-normal items-center  '>
-                <div className='bg-white w-[80%] md:w-[70%] xl:w-[40%] '>
+                <div className='bg-white w-[90%] md:w-[70%] xl:w-[40%] '>
 
 
                     <div className='px-10 md:px-14 pt-8 '>
@@ -112,7 +114,7 @@ const Bookd = () => {
 
                  
 
-                    <form action="" className=' flex flex-col justify-center gap-5'>
+                    <form onSubmit={handleSubmit} className=' flex flex-col justify-center gap-5'>
 
                         <div className='flex flex-col px-10 md:px-16 w-[100%] lg:w-[100%] gap-2  '>
                             <p className='text-sm md:text-lg font-[500] pt-3 text-left text-[#00401A] '>Sender information</p>
