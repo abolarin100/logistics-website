@@ -6,11 +6,18 @@ import hb from '../images/hero1.png'
 import hc from '../images/hero2.png'
 import hd from '../images/hero2.png'
 import Offers from './Offers';
+import { useNavigate } from 'react-router-dom';
 
 
 const Hero = () => {
+    const navigate = useNavigate();
     const isSmallScreen = useMediaQuery({ maxWidth: 767 });
     const isLargeScreen = useMediaQuery({ minWidth: 768 });
+
+    const navigateToPage = (path) => {
+        navigate(path);
+        // setNav(false); // Close the menu after navigation
+      };
 
 
     const slides = isSmallScreen
@@ -92,7 +99,9 @@ const Hero = () => {
                     Reliable Service
                     </h1> */}
                     <p className='text-xl mb-4 text-white w-[95%] md:w-[50%]'>From small packages to bulk deliveries, we handle your parcels with care and ensure they reach their destination on time.</p>
-                    <button className='px-4 text-lg font-[500] rounded-full relative top-5 bg-[#00401A] hover:text-white border-none transform transition-transform hover:scale-110'>
+                    <button 
+                    onClick={() => navigateToPage('/bookd')}
+                    className='px-4 text-lg font-[500] rounded-full relative top-5 bg-[#00401A] hover:text-white border-none transform transition-transform hover:scale-110'>
                         Book a Delivery
                     </button>
                     <button className='px-4 text-lg font-[500] rounded-full relative ml-4 top-5 bg-white text-[#00401A]  border-none transform transition-transform hover:scale-110'>

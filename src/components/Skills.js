@@ -47,12 +47,10 @@ const Skills = () => {
 
     const navigate = useNavigate();
 
-    const handleData = () => {
-        navigate('data-analysis');
-    };
-    const handleBusiness = () => {
-        navigate('business-analysis');
-    };
+    const navigateToPage = (path) => {
+        navigate(path);
+        // setNav(false); // Close the menu after navigation
+      };
 
     const reviews = [
         { name: 'John Doe', role: 'Architect', text: ' Rorem ipsum dolor sit amet, consectetu adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissi, metus nec fringilla accumsan, risus sem sollicitudin lacus' },
@@ -185,7 +183,7 @@ const Skills = () => {
                     <h2 className='font-semibold text-xl md:text-xl  lg:text-2xl'>Delivering Convenience with Every Parcel</h2>
                     <p className='  text-left font-normal pr-0 sm:pr-0 md:pr-0 lg:pr-20 text-xs sm:text-xs md:text-xs lg:text-base'>At Multi-Bag Deliveries (MBD), we make sending and receiving packages easy and affordable across Ghana. From food to clothes, drugs to gadgets, we’ve got you covered. Simply place your order, and MBD will deliver swiftly and securely.</p>
 
-                    <button className='rounded-full px-0 lg:px-2 text-xs sm:text-xs md:text-xs lg:text-base font-[600] w-[55%] sm:w-[50%] md:w-[100%] lg:w-[35%]   items-start text-white bg-[#00401A]  border-none transform transition-transform hover:scale-110 mt-3'>
+                    <button onClick={() => navigateToPage('/bookd')} className='rounded-full px-0 lg:px-2 text-xs sm:text-xs md:text-xs lg:text-base font-[600] w-[55%] sm:w-[50%] md:w-[100%] lg:w-[35%]   items-start text-white bg-[#00401A]  border-none transform transition-transform hover:scale-110 mt-3'>
                         Send or Receive a Package
                     </button>
 
@@ -223,7 +221,7 @@ const Skills = () => {
 
                         <div className='flex flex-row-reverse justify-between px-1 mt-2 pt-4 pb-3'>
                             <p className='text-base font-semibold'></p>
-                            <button className='hover:bg-green-700 hover:text-white text-base font-[600] bg-[#00401A] text-white border-1 border-none rounded-full' onClick={handleBusiness}>Book Now</button>
+                            <button className='hover:bg-green-700 hover:text-white text-base font-[600] bg-[#00401A] text-white border-1 border-none rounded-full' onClick={() => navigateToPage('/bookd')} >Book Now</button>
                         </div>
                     </div>
                 </div>
@@ -248,7 +246,7 @@ const Skills = () => {
 
                         <div className='flex flex-row-reverse justify-between px-1 pt-4 pb-3'>
                             <p className='text-base font-semibold'></p>
-                            <button className='hover:bg-green-700 hover:text-white text-base font-[600] bg-[#00401A] text-white border-1 border-none rounded-full' onClick={handleBusiness}>Book Now</button>
+                            <button className='hover:bg-green-700 hover:text-white text-base font-[600] bg-[#00401A] text-white border-1 border-none rounded-full' onClick={() => navigateToPage('/bookd')}>Book Now</button>
                         </div>
                     </div>
                 </div>
@@ -329,7 +327,9 @@ const Skills = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className=' hover:scale-110 mt-20 md:mt-16 bg-[#00401A] font-[600] rounded-full text-white my-0 md:my-4 lg:mt-16 '>Get Started</button>
+                        <button
+                        onClick={() => navigateToPage('/faqdtl')}
+                        className=' hover:scale-110 mt-20 md:mt-16 bg-[#00401A] font-[600] rounded-full text-white my-0 md:my-4 lg:mt-16 '>Get Started</button>
                     </div>
                 </div>
 
@@ -378,7 +378,7 @@ const Skills = () => {
                 <div className='bg-white  pl-8 pt-8'>
                     <h2 className='text-2xl lg:text-5xl font-bold '>Ready to Send a Parcel?</h2>
                     <p className='text-sm mt-4'>Experience seamless parcel deliveries with MBD.</p>
-                    <button className=' hover:scale-110 mt-10 md:mt-8 bg-[#00401A] font-[600] rounded-full text-white my-0 md:my-4 lg:mt-8 '>Get Started Now</button>
+                    <button  onClick={() => navigateToPage('/faqdtl')} className=' hover:scale-110 mt-10 md:mt-8 bg-[#00401A] font-[600] rounded-full text-white my-0 md:my-4 lg:mt-8 '>Get Started Now</button>
 
                     <div className=' w-[92%] md:w-[100%] lg:w-[99%] bg-[#E6ECE8] items-center mx-0 my-8 px-4 py-8 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8'>
                         <div>

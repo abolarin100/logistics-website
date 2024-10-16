@@ -108,7 +108,7 @@ const Navbar = () => {
         <div className='ml-40'>
           <button
             className='bg-transparent border-none my-6  text-[#00401A]  hover:text-[#FFA62B] text-lg font-semibold px-4 mx-2'
-            onClick={() => navigateToPage('/login')}
+            // onClick={() => navigateToPage('/login')}
           >
             Login
           </button>
@@ -168,7 +168,7 @@ const Navbar = () => {
           <div className='mt-8'>
             <button
               className='bg-transparent  text-[#00401A] transform transition-transform hover:scale-110  text-xl p-4 mx-2'
-              onClick={() => navigateToPage('/login')}
+              // onClick={() => navigateToPage('/login')}
             >
               Login
             </button>

@@ -42,7 +42,7 @@ const Bookrw = () => {
     const [specialInstructions, setSpecialInstructions] = useState('');
     const [isPremiumSelected, setIsPremiumSelected] = useState(false);
     const [isStandardSelected, setIsStandardSelected] = useState(false);
-    const [showModal, setShowModal] = useState(true); // Modal visibility state
+    const [showModal, setShowModal] = useState(false); // Modal visibility state
 
     // Load data from localStorage on component mount
     useEffect(() => {
