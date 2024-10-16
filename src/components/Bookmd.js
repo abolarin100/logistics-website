@@ -67,7 +67,7 @@ const Bookmd = () => {
 
     return (
         <div className='h-[80vh]'>
-            <div className='w-[100%] lg:h-[80vh] xl:h-[110vh] bg-[#E6ECE8] pt-20 pb-10 md:pt-20 xl:pt-40 md:mt-0 md:pb-16 xl:pb-20 flex flex-col justify-center xl:justify-normal items-center'>
+            <div className='w-[100%] lg:h-[100vh] xl:h-[160vh] bg-[#E6ECE8] pt-20 pb-10 md:pt-20 xl:pt-40 md:mt-0 md:pb-16 xl:pb-20 flex flex-col justify-center xl:justify-normal items-center'>
                 <div className='bg-white w-[90%] md:w-[70%] xl:w-[40%]'>
                     <div className='px-10 md:px-14 pt-8 '>
                         <p className=' text-2xl md:text-4xl font-semibold text-center '>Book a Delivery</p>
